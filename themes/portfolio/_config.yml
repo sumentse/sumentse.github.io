@@ -1,0 +1,35 @@
+# Header
+menu:
+  About: '#about'
+  Skills: '#skills'
+  Works: '#portfolio'
+  Contact: '#contact'
+rss: /atom.xml
+
+profilePic: 'img/profile.jpg'
+emailAddress: 'sumen.tse@gmail.com'
+
+skills:
+  - HTML5
+  - Bootstrap
+  - CSS3
+  - SASS
+  - Javascript
+  - Jquery
+  - AngularJS
+  - React
+  - NodeJS
+  - PHP
+  - Python
+  - MySQL
+  - MongoDB
+  - GIT
+  - Gulp
+  - WordPress
+  - Linux
+  - Photoshop
+  - Illustrator
+
+# Miscellaneous
+google_analytics: UA-96086695-1
+github: https://github.com/sumentse

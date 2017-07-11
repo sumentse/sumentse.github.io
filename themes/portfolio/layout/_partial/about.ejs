@@ -1,0 +1,24 @@
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">About</h2>
+                <hr class="light">
+                <% if(theme.profilePic){%>
+
+                    <img style="padding-bottom:15px; width:200px" class="img-circle" src="<%- url_for(theme.profilePic) %>" />
+
+                <%}%>
+                <p class="text-faded">My name is Sumen Tse, and
+                    <br/>enjoy everything about building tools on the web.
+                    <br/>I have lots of experience in back and front-end development.
+                    <br/>I love to build responsive and easy to use interfaces for people to use everyday.</p>
+                <p class="text-faded">I focus on making my code modular, reusable, simple, bug free, clean, and efficient.
+                    <br/>In my spare time I like to keep my skills sharp by doing readings,
+                    <br/>following the latest trends, and
+                    <br/>attending tech meetups.</p>
+            </div>
+        </div>
+    </div>
+    <!-- <br><br><br> -->
+</section>

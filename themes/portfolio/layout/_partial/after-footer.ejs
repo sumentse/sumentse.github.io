@@ -1,0 +1,101 @@
+<%-
+	js([
+		'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js',
+		'https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js',
+        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',
+        'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js',
+        'https://rawgit.com/jlmakes/scrollreveal/master/dist/scrollreveal.min.js',
+	])
+%>
+
+<script>
+	(function($) {
+	    "use strict"; // Start of use strict
+
+	    // jQuery for page scrolling feature - requires jQuery Easing plugin
+	    $('a.page-scroll').bind('click', function(event) {
+	        var $anchor = $(this);
+	        $('html, body').stop().animate({
+	            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+	        }, 1250,'easeInOutExpo');
+	        event.preventDefault();
+	    });
+
+	    // Highlight the top nav as scrolling occurs
+	    $('body').scrollspy({
+	        target: '.navbar-fixed-top',
+	        offset: 51
+	    });
+
+	    // Closes the Responsive Menu on Menu Item Click
+	    $('.navbar-collapse ul li a').click(function() {
+	        $('.navbar-toggle:visible').click();
+	    });
+
+	    // Offset for Main Navigation
+	    $('#mainNav').affix({
+	        offset: {
+	            top: 100
+	        }
+	    })
+
+		$('.my-skills').slick({
+            centerMode: true,
+            arrows: true,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    autoplaySpeed: 4000,
+                    centerMode: false,
+                }
+            }, {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    centerMode: false,
+                    dots: true
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    centerMode: false,
+                    dots: true
+                }
+            }]
+        });	    
+
+	    // Initialize and Configure Scroll Reveal Animation
+	    window.sr = ScrollReveal();
+	    sr.reveal('.my-skills', {
+	        duration: 600,
+	        scale: 0.3,
+	        distance: '0px'
+	    }, 300);
+	    sr.reveal('.sr-icons', {
+	        duration: 600,
+	        scale: 0.3,
+	        distance: '0px'
+	    }, 400);
+	    sr.reveal('.sr-button', {
+	        duration: 1000,
+	        delay: 200
+	    });
+	    sr.reveal('.sr-contact', {
+	        duration: 600,
+	        scale: 0.3,
+	        distance: '0px'
+	    }, 300);
+
+
+	})(jQuery); // End of use strict
+	
+</script>

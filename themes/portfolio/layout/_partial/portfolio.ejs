@@ -1,0 +1,33 @@
+<section class="no-padding" id="portfolio">
+    <div class="container-fluid">
+        <div class="row no-gutter popup-gallery">
+            <% 
+                let projects = posts.toArray();
+                
+                projects.map((project)=>{ %>
+                    <div class="col-sm-6 col-lg-4">
+                        <a href="<%= project.projectLink %>" target="_blank" class="portfolio-box">
+                            <img src="<%= project.coverImage %>" class="img-responsive" alt="Cover image for <%= project.projectName %>" />
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        <%= project.projectCategory %>
+                                    </div>
+                                    <div class="project-name">
+                                        <%= project.projectName %>
+                                    </div>
+                                    <div class="technology-used">
+                                        <%
+                                            _.uniq(project.technologyUsed).map((tech)=>{ %>
+                                                <span class="hard-skills"><%= tech %></span>
+                                            <%})
+                                        %>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <%});%>
+        </div>
+    </div>
+</section>
