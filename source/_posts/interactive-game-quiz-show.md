@@ -10,7 +10,7 @@ technologyUsed:
 - HTML5
 - CSS3
 - Javascript E6
-- React
+- ReactJS
 - Redux
 - MongoDB
 - NodeJS
