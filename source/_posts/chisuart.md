@@ -13,5 +13,5 @@ technologyUsed:
 - JavaScript E6
 - CSS3
 - HTML5
-- SCSS
+- SASS
 ---
