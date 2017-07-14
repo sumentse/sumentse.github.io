@@ -1,8 +1,8 @@
 # Header
 menu:
   About: '#about'
+  Projects: '#portfolio'
   Skills: '#skills'
-  Works: '#portfolio'
   Contact: '#contact'
 rss: /atom.xml
 

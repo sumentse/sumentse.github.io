@@ -4,15 +4,30 @@
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <h2 class="section-heading">Let's Get In Touch!</h2>
                 <hr class="primary">
-                <p>Interested in working together? Send an Email below.</p>
+                <p>Interested in working together? Fill out this awesome form below.</p>
             </div>
-            <div class="col-lg-12 text-center">
-                <% if(theme.emailAddress){%>
-                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p>
-                        <a href="mailto:<%= theme.emailAddress %>" target="_blank"><%= theme.emailAddress %></a>
-                    </p>
-                <%}%>
+            <div class="col-lg-6 col-lg-offset-3">
+                <form id="contact-me">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" name="name" required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="_replyto">Email</label>
+                        <input class="form-control" type="email" required="true" name="_replyto">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea rows="5" class="form-control" name="message" required="true"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <input class="btn btn-primary" type="submit" value="Send" />
+                        <input id="clear-btn" class="btn btn-danger" type="button" value="Clear" />
+                    </div>
+                    <input type="hidden" name="_subject" value="New submission from github site" />
+                </form>
+                <div id="alert-message" role="alert">
+                </div>
             </div>
         </div>
     </div>

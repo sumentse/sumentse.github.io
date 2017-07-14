@@ -8,6 +8,7 @@ coverImage: img/thumbnails/chisuart.jpg
 projectCategory: Interactive
 technologyUsed:
 - Hexo
+- BootStrap
 - EJS
 - Jquery
 - JavaScript E6

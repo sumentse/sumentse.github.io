@@ -1,3 +1,5 @@
+@import "_partials/animista";
+
 html {
   height: 100%;
   width: 100%;
@@ -575,6 +577,15 @@ body {
   .hard-skills {
     padding: 0px 5px;
   }
+}
+
+#alert-message {
+  margin-top: 2em;
+}
+
+.scale-in-center {
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @import "_partials/custom-slick-slider";
