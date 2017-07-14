@@ -63,6 +63,18 @@
 	(function($) {
 	    "use strict"; // Start of use strict
 
+		function objectifyForm(formArray) {//serialize data function
+
+		  var returnArray = {};
+
+		  for (var i = 0; i < formArray.length; i++){
+		    returnArray[formArray[i]['name']] = formArray[i]['value'];
+		  }
+
+		  return returnArray;
+		}
+
+
 	    // jQuery for page scrolling feature - requires jQuery Easing plugin
 	    $('a.page-scroll').bind('click', function(event) {
 	        var $anchor = $(this);
@@ -145,6 +157,43 @@
 	        scale: 0.3,
 	        distance: '0px'
 	    }, 300);
+
+	    $('#contact-me').submit(function(event){
+
+	    	var formData = objectifyForm($('#contact-me').serializeArray());
+
+			$.ajax({
+			    url: "https://formspree.io/sumen.tse@gmail.com", 
+			    method: "POST",
+			    data: formData,
+			    dataType: "json"
+			}).done(function(data){
+				
+				if(data.success === "email sent"){
+					$('#contact-me').trigger('reset');
+					$('#alert-message')
+						.removeClass()
+						.html('')
+						.addClass('alert alert-success scale-in-center')
+						.append('Message was successfully sent!');
+				} else {
+					$('#alert-message')
+						.removeClass()
+						.html('')
+						.addClass('alert alert-danger scale-in-center')
+						.append('Error in sending message');					
+				}
+			});
+
+	    	event.preventDefault();
+	    });
+
+	    $('#clear-btn').click(function(event){
+	    	$('#contact-me').trigger('reset');
+	    	$('#alert-message').removeClass().html('');
+	    });
+
+
 
 
 	})(jQuery); // End of use strict

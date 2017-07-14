@@ -556,31 +556,36 @@
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <h2 class="section-heading">Let's Get In Touch!</h2>
                 <hr class="primary">
-                <p>Interested in working together? Send an Email below.</p>
+                <p>Interested in working together? Fill out this awesome form below.</p>
             </div>
             <div class="col-lg-6 col-lg-offset-3">
-                <form action="https://formspree.io/sumen.tse@gmail.com" method="POST">
+                <form id="contact-me">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input class="form-control" type="text" name="name">
+                        <input class="form-control" type="text" name="name" required="true">
                     </div>
                     <div class="form-group">
                         <label for="_replyto">Email</label>
-                        <input class="form-control" type="email" name="_replyto">
+                        <input class="form-control" type="email" required="true" name="_replyto">
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea class="form-control" name="message"></textarea>
+                        <textarea rows="5" class="form-control" name="message" required="true"></textarea>
                     </div>
                     <div class="text-center">
-                        <input class="btn btn-primary" type="submit" value="Send">
+                        <input class="btn btn-primary" type="submit" value="Send" />
+                        <input id="clear-btn" class="btn btn-danger" type="button" value="Clear" />
                     </div>
+                    <input type="hidden" name="_subject" value="New submission from github site" />
                 </form>
+                <div id="alert-message" role="alert">
+                </div>
             </div>
         </div>
     </div>
 </section>
 <p class="text-muted text-center">Copyright © SumenTse 2015</p>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -590,6 +595,18 @@
 <script>
 	(function($) {
 	    "use strict"; // Start of use strict
+
+		function objectifyForm(formArray) {//serialize data function
+
+		  var returnArray = {};
+
+		  for (var i = 0; i < formArray.length; i++){
+		    returnArray[formArray[i]['name']] = formArray[i]['value'];
+		  }
+
+		  return returnArray;
+		}
+
 
 	    // jQuery for page scrolling feature - requires jQuery Easing plugin
 	    $('a.page-scroll').bind('click', function(event) {
@@ -673,6 +690,43 @@
 	        scale: 0.3,
 	        distance: '0px'
 	    }, 300);
+
+	    $('#contact-me').submit(function(event){
+
+	    	var formData = objectifyForm($('#contact-me').serializeArray());
+
+			$.ajax({
+			    url: "https://formspree.io/sumen.tse@gmail.com", 
+			    method: "POST",
+			    data: formData,
+			    dataType: "json"
+			}).done(function(data){
+				
+				if(data.success === "email sent"){
+					$('#contact-me').trigger('reset');
+					$('#alert-message')
+						.removeClass()
+						.html('')
+						.addClass('alert alert-success scale-in-center')
+						.append('Message was successfully sent!');
+				} else {
+					$('#alert-message')
+						.removeClass()
+						.html('')
+						.addClass('alert alert-danger scale-in-center')
+						.append('Error in sending message');					
+				}
+			});
+
+	    	event.preventDefault();
+	    });
+
+	    $('#clear-btn').click(function(event){
+	    	$('#contact-me').trigger('reset');
+	    	$('#alert-message').removeClass().html('');
+	    });
+
+
 
 
 	})(jQuery); // End of use strict
