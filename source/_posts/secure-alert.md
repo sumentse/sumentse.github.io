@@ -14,5 +14,5 @@ technologyUsed:
 - BootStrap
 - Restful API
 - SASS
-- GULP
+- Gulp
 ---
