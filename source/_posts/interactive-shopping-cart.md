@@ -4,6 +4,7 @@ date: 2017-07-10 16:29:31
 tags:
 projectName: Shopping Cart
 projectLink: http://sumentse.github.io/Shopping-App-BootStrap
+initialCaption:
 coverImage: img/thumbnails/2.jpg
 projectCategory: Interactive
 technologyUsed:
@@ -12,4 +13,5 @@ technologyUsed:
 - Javascript
 - AngularJS
 - BootStrap
+gallery:
 ---

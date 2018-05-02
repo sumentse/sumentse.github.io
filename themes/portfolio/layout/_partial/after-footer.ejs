@@ -5,6 +5,7 @@
         'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',
         'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js',
         'https://rawgit.com/jlmakes/scrollreveal/master/dist/scrollreveal.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js'
 	])
 %>
 
@@ -22,6 +23,24 @@
 
 		  return returnArray;
 		}
+
+		var message = 'hello'.split('');
+		var letterCounter = 0;
+
+		var stop = setInterval(function(){
+			if(letterCounter === message.length){
+				clearInterval(stop);
+			}
+			$('#message').append(message[letterCounter]);
+			letterCounter++;
+		}, 700);
+
+
+
+	    lightbox.option({
+	      'maxWidth': window.innerWidth - 50,
+	      'maxHeight': window.innerHeight - 200
+	    });
 
 
 	    // jQuery for page scrolling feature - requires jQuery Easing plugin
@@ -136,12 +155,6 @@
 
 	    	event.preventDefault();
 	    });
-
-	    // $('#clear-btn').click(function(event){
-	    // 	$('#contact-me').trigger('reset');
-	    // 	$('#alert-message').removeClass().html('');
-	    // });
-
 
 
 

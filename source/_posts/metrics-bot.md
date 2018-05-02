@@ -4,6 +4,7 @@ date: 2017-07-12 00:27:07
 tags:
 projectName: Metric Bot
 projectLink: https://sumentse.github.io/metrics-bot/
+initialCaption:
 coverImage: img/thumbnails/metric-bot.png
 projectCategory: Interactive
 technologyUsed:
@@ -12,4 +13,5 @@ technologyUsed:
 - JQuery
 - JavaScript
 - RaphaelJS
+gallery:
 ---

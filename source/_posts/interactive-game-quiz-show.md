@@ -4,6 +4,7 @@ date: 2017-07-10 16:29:47
 tags:
 projectName: Game Quiz Show
 projectLink: https://qif-quiz.herokuapp.com/
+initialCaption:
 coverImage: img/thumbnails/6.jpg
 projectCategory: Interactive
 technologyUsed:
@@ -15,4 +16,5 @@ technologyUsed:
 - MongoDB
 - NodeJS
 - Express
+gallery:
 ---

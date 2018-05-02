@@ -4,6 +4,7 @@ date: 2017-07-27 23:55:57
 tags:
 projectName: Quick Kudos
 projectLink: https://paperless-card.herokuapp.com
+initialCaption:
 coverImage: img/thumbnails/quickkudos.png
 projectCategory: Interactive
 technologyUsed:
@@ -14,4 +15,5 @@ technologyUsed:
 - MongoDB
 - NodeJS
 - Express
+gallery:
 ---
