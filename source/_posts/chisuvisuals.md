@@ -2,8 +2,8 @@
 title: chisuart
 date: 2017-07-12 00:38:29
 tags:
-projectName: ChiSuArt Site
-projectLink: https://chisuart.github.io/
+projectName: ChiSuVisuals Site
+projectLink: https://chisuvisuals.github.io/
 initialCaption:
 coverImage: img/thumbnails/chisuart.jpg
 projectCategory: Interactive
