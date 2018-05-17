@@ -8,6 +8,8 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css";
 @import "_partials/animista";
 
+
+
 html {
     height: 100%;
     width: 100%;
@@ -233,6 +235,13 @@ header {
     }
 }
 
+@media (max-width: 767px) {
+    .img-responsive {
+        max-width: none;
+        min-width: 100%;
+    }
+}
+
 @media (min-width: 768px) {
     header {
         min-height: 100%;
@@ -325,6 +334,7 @@ header {
         outline: none;
     }
 }
+
 
 @media (min-width: 768px) {
     .portfolio-box .portfolio-box-caption .portfolio-box-caption-content {

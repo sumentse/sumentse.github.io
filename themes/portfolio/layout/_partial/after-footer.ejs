@@ -52,6 +52,34 @@
 	        event.preventDefault();
 	    });
 
+	    $(document).bind('scroll', function(event){
+	    	var scrollPOS = $(document).scrollTop();
+	    	if(scrollPOS >= 729){
+	    		$('#message').text("");
+	    		letterCounter = 0;
+	    		clearInterval(stop);
+	    	}
+
+	    	if(scrollPOS <= 270){
+
+	    		if(letterCounter === 0){
+	    			clearInterval(stop); //clear out any timer
+					stop = setInterval(function(){
+						if(letterCounter === message.length){
+							clearInterval(stop);
+						}
+						$('#message').append(message[letterCounter]);
+						letterCounter++;
+					}, 700);
+
+	    			
+	    		}
+
+
+	    	}
+
+	    })
+
 	    // Highlight the top nav as scrolling occurs
 	    $('body').scrollspy({
 	        target: '.navbar-fixed-top',
